@@ -1,0 +1,6 @@
+{
+  "name": "Studio You Fit - Academia em Barra Nova",
+  "description": "Landing page oficial da Academia Studio You Fit em Barra Nova, Marechal Deodoro - AL. Estrutura climatizada, musculação, lutas, dança, funcional e convênios Wellhub e TotalPass.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
