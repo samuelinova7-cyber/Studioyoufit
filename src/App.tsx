@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Header } from './components/Header';
 import { HeroBento } from './components/HeroBento';
 import { PlansSection } from './components/PlansSection';
+import { QuizGame } from './components/QuizGame';
 import { ModalidadesSection } from './components/ModalidadesSection';
 import { ScheduleSection } from './components/ScheduleSection';
 import { FaqSection } from './components/FaqSection';
@@ -33,6 +34,9 @@ export default function App() {
 
         {/* PLANOS, VALORES, CASAL & CONVÊNIOS NA PARTE SUPERIOR */}
         <PlansSection onOpenModal={handleOpenModal} />
+
+        {/* DESAFIO INTERATIVO QUIZ YOUFIT */}
+        <QuizGame />
 
         {/* MODALIDADES & AULAS */}
         <ModalidadesSection onOpenModal={handleOpenModal} />

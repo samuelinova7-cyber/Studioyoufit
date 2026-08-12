@@ -37,9 +37,13 @@ export const Header: React.FC<HeaderProps> = ({ onOpenModal }) => {
         </a>
 
         {/* DESKTOP NAVIGATION */}
-        <nav className="hidden md:flex items-center gap-5 lg:gap-7 text-xs font-bold uppercase tracking-widest text-zinc-400">
+        <nav className="hidden md:flex items-center gap-4 lg:gap-6 text-xs font-bold uppercase tracking-widest text-zinc-400">
           <a href="#inicio" className="hover:text-[#CCFF00] transition-colors py-1">Início</a>
           <a href="#planos" className="hover:text-[#CCFF00] transition-colors py-1 text-[#CCFF00]/90">Planos & Preços</a>
+          <a href="#desafio" className="hover:text-[#CCFF00] transition-colors py-1 text-white font-extrabold flex items-center gap-1">
+            <span className="w-2 h-2 rounded-full bg-[#CCFF00] animate-pulse"></span>
+            <span>Desafio</span>
+          </a>
           <a href="#modalidades" className="hover:text-[#CCFF00] transition-colors py-1">Aulas</a>
           <a href="#horarios" className="hover:text-[#CCFF00] transition-colors py-1">Horários</a>
           <a href="#faq" className="hover:text-[#CCFF00] transition-colors py-1">Dúvidas</a>
@@ -95,6 +99,14 @@ export const Header: React.FC<HeaderProps> = ({ onOpenModal }) => {
             >
               <span>Planos, Preços & Convênios</span>
               <span className="text-[10px] bg-[#CCFF00]/20 text-[#CCFF00] px-2 py-0.5 rounded-full">A partir de R$110</span>
+            </a>
+            <a 
+              href="#desafio" 
+              onClick={() => setMobileMenuOpen(false)} 
+              className="py-2 border-b border-zinc-800/60 text-white font-extrabold flex items-center justify-between"
+            >
+              <span>Quiz Desafio YouFit ⚡</span>
+              <span className="text-[10px] bg-[#CCFF00] text-black px-2 py-0.5 rounded-full font-extrabold uppercase">1 Aula Grátis</span>
             </a>
             <a 
               href="#modalidades" 
