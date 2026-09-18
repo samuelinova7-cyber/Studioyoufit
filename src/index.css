@@ -1,12 +1,110 @@
 @import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300&display=swap');
 
 @layer base {
   body {
-    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-family: 'Kanit', sans-serif;
+    background-color: #0C0C0C;
+    color: #D7E2EA;
   }
   h1, h2, h3, h4, h5, h6, .font-heading {
-    font-family: 'Outfit', sans-serif;
+    font-family: 'Kanit', sans-serif;
   }
+}
+
+.hero-heading {
+  background: linear-gradient(180deg, #646973 0%, #BBCCD7 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.btn-contact {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: #FFFFFF;
+  font-family: 'Kanit', sans-serif;
+  font-weight: 500;
+  text-decoration: none;
+  white-space: nowrap;
+  background: linear-gradient(123deg, #04160C 7%, #0A8F45 37%, #22C55E 72%, #8BFFB8 100%);
+  box-shadow: 0px 4px 12px rgba(10,143,69,0.3), inset 4px 4px 12px #14984F;
+  border: 2px solid #FFFFFF;
+  outline: 2px solid rgba(255,255,255,0.2);
+  outline-offset: -3px;
+  transition: transform 0.2s cubic-bezier(0.25,0.1,0.25,1), filter 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-contact:hover {
+  transform: translateY(-2px) scale(1.03);
+  filter: brightness(1.1);
+  box-shadow: 0px 8px 18px rgba(10,143,69,0.42), inset 4px 4px 12px #14984F;
+}
+
+.btn-contact:active {
+  transform: translateY(1px) scale(0.98);
+}
+
+.marquee-tile {
+  width: 420px;
+  height: 270px;
+  object-fit: cover;
+  border-radius: 1rem;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+  border: 1px solid rgba(215,226,234,0.05);
+  background-color: #1a1a1a;
+  flex-shrink: 0;
+}
+
+@media (max-width: 640px) {
+  .marquee-tile {
+    width: 280px;
+    height: 180px;
+  }
+}
+
+.scroll-fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s cubic-bezier(0.25,0.1,0.25,1), transform 0.7s cubic-bezier(0.25,0.1,0.25,1);
+}
+
+.scroll-fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes fadeInLoad {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-load {
+  animation: fadeInLoad 0.7s cubic-bezier(0.25,0.1,0.25,1) forwards;
+}
+
+@keyframes heroPortraitReveal {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.hero-portrait-reveal {
+  animation: heroPortraitReveal 0.75s cubic-bezier(0.25,0.1,0.25,1) 0.25s forwards;
 }
 
 /* Custom Scrollbar for dark theme */
@@ -15,7 +113,7 @@
   height: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #09090b;
+  background: #0C0C0C;
 }
 ::-webkit-scrollbar-thumb {
   background: #27272a;
@@ -28,25 +126,38 @@
 .text-neon {
   color: #CCFF00;
 }
-
 .bg-neon {
   background-color: #CCFF00;
 }
-
 .border-neon {
   border-color: #CCFF00;
 }
-
 .glow-neon {
   box-shadow: 0 0 25px rgba(204, 255, 0, 0.15);
 }
-
 .glow-neon-lg {
   box-shadow: 0 0 50px rgba(204, 255, 0, 0.25);
 }
-
 .logo-green-glow {
   box-shadow: 0 0 20px rgba(204, 255, 0, 0.6), 0 0 40px rgba(204, 255, 0, 0.3);
   filter: drop-shadow(0 0 10px rgba(204, 255, 0, 0.7));
+}
+
+.hero__loading {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: grid;
+  place-items: center;
+  background: #000;
+  color: #fff;
+  font-family: Arial, sans-serif;
+  font-size: 1.5rem;
+  transition: opacity 0.35s ease, visibility 0.35s ease;
+}
+
+.hero__loading.is-hidden {
+  visibility: hidden;
+  opacity: 0;
 }
 

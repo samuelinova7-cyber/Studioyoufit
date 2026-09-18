@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { Header } from './components/Header';
-import { HeroBento } from './components/HeroBento';
+import { ScrollVideoHero } from './components/ScrollVideoHero';
+import { MarqueeSection } from './components/MarqueeSection';
+import { CinematicServices } from './components/CinematicServices';
+import { StickyProcessSection } from './components/StickyProcessSection';
 import { PlansSection } from './components/PlansSection';
 import { QuizGame } from './components/QuizGame';
-import { ModalidadesSection } from './components/ModalidadesSection';
 import { ScheduleSection } from './components/ScheduleSection';
 import { FaqSection } from './components/FaqSection';
 import { InstagramSection } from './components/InstagramSection';
@@ -22,24 +24,30 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-zinc-950 text-white font-sans selection:bg-[#CCFF00] selection:text-black">
+    <div className="min-h-screen bg-[#050505] text-[#f8f8f4] font-['Montserrat',sans-serif] selection:bg-[#CCFF00] selection:text-black overflow-x-hidden">
       
       {/* HEADER */}
       <Header onOpenModal={handleOpenModal} />
 
       {/* MAIN CONTENT */}
       <main>
-        {/* HERO BENTO GRID SECTION (Com Destaque R$ 110/mês) */}
-        <HeroBento onOpenModal={handleOpenModal} />
+        {/* SCROLL-SCRUBBED VIDEO HERO & SOLUTIONS SECTION */}
+        <ScrollVideoHero />
+
+        {/* TRABALHOS REALIZADOS & AMBIENTE MARQUEE */}
+        <MarqueeSection />
 
         {/* PLANOS, VALORES, CASAL & CONVÊNIOS NA PARTE SUPERIOR */}
         <PlansSection onOpenModal={handleOpenModal} />
 
+        {/* CINEMATIC SERVICES SECTION */}
+        <CinematicServices onOpenModal={handleOpenModal} />
+
+        {/* STICKY PROCESS SECTION (COMO FUNCIONA) */}
+        <StickyProcessSection />
+
         {/* DESAFIO INTERATIVO QUIZ YOUFIT */}
         <QuizGame />
-
-        {/* MODALIDADES & AULAS */}
-        <ModalidadesSection onOpenModal={handleOpenModal} />
 
         {/* GRADE DE HORÁRIOS */}
         <ScheduleSection onOpenModal={handleOpenModal} />
@@ -70,3 +78,4 @@ export default function App() {
     </div>
   );
 }
+
