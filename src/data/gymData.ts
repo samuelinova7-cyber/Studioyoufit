@@ -48,9 +48,9 @@ export const GYM_INFO = {
       legenda: "Acompanhamento profissional para alcançar seus objetivos em Barra Nova."
     }
   ],
-  whatsapp: "+5582996237489",
-  whatsappFormatted: "(82) 99623-7489",
-  whatsappClean: "5582996237489",
+  whatsapp: "+5582976049148",
+  whatsappFormatted: "(82) 97604-9148",
+  whatsappClean: "5582976049148",
   instagramHandle: "@studioyoufit_",
   instagramUrl: "https://www.instagram.com/studioyoufit_/",
   instagramVideos: [
