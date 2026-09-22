@@ -5,23 +5,23 @@ const STEPS = [
   {
     step: "01",
     category: "Etapa 01",
-    title: "Diagnóstico & Avaliação",
-    intro: "Começo entendendo seu objetivo, nível atual de condicionamento físico e rotina diária.",
-    body: "A partir dessa leitura, indicamos a modalidade perfeita (Musculação, Jiu-Jitsu, Muay Thai, FitDance, Funcional ou Ritbox) e montamos sua estratégia com expectativa realista."
+    title: "Diagnóstico & Objetivo",
+    intro: "Entendemos sua meta principal, seu nível de condicionamento e sua rotina diária.",
+    body: "A partir dessa leitura, indicamos a melhor modalidade (Musculação, Muay Thai, FitDance, Funcional ou Hitbox) e alinhamos o plano ideal (Essencial, Premium ou Família) com matrícula grátis."
   },
   {
     step: "02",
     category: "Etapa 02",
-    title: "Estruturação & Recepção",
-    intro: "Acolhimento em nossa academia 100% climatizada em Barra Nova com suporte de instrutores.",
-    body: "Tudo é configurado para que você inicie seus treinos com segurança, acompanhamento de qualidade e integração com convênios como Wellhub e TotalPass."
+    title: "Acolhimento & Recepção",
+    intro: "Recepção calorosa em nossa academia 100% climatizada em Barra Nova com suporte de instrutores.",
+    body: "Tudo é configurado para que você treine com segurança, acompanhamento de qualidade e facilidade na validação de convênios como Wellhub (Silver+) e TotalPass (TP2)."
   },
   {
     step: "03",
     category: "Etapa 03",
     title: "Evolução & Constância",
-    intro: "Acompanhamento diário dos seus treinos, frequência e resultados obtidos.",
-    body: "Com reavaliações periódicas e aulas dinâmicas, garantimos que você mantenha o foco, vença o sedentarismo e alcance sua melhor performance."
+    intro: "Acompanhamento contínuo dos seus treinos, frequência e resultados obtidos.",
+    body: "Com treinos dinâmicos, acompanhamento profissional e opção de avaliação física detalhada, garantimos que você vença o sedentarismo e conquiste seu melhor físico."
   }
 ];
 
@@ -34,9 +34,9 @@ export const StickyProcessSection: React.FC = () => {
       <div className="max-w-6xl mx-auto">
         {/* Section Heading */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 bg-[#CCFF00]/10 border border-[#CCFF00]/30 px-4 py-1.5 rounded-full mb-4">
+          <div className="inline-flex items-center gap-2 bg-[#CCFF00]/10 border border-[#CCFF00]/30 px-4 py-1.5 rounded-full mb-4 shadow-[0_0_15px_rgba(204,255,0,0.15)]">
             <Trophy className="w-4 h-4 text-[#CCFF00]" />
-            <span className="text-xs font-extrabold uppercase tracking-widest text-[#CCFF00]">
+            <span className="text-xs font-extrabold uppercase tracking-widest text-[#CCFF00] font-heading">
               METODOLOGIA YOU FIT
             </span>
           </div>

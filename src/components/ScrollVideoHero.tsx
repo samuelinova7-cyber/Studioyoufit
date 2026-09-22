@@ -235,7 +235,7 @@ export const ScrollVideoHero: React.FC = () => {
                   Aulas Coletivas
                 </h3>
                 <p className="m-0 text-[#f8f8f4] text-[clamp(13px,1.05vw,16px)] font-bold leading-[1.58]">
-                  Ritbox, Funcional, FitDance, Muay Thai e Jiu-Jitsu para alta queima calórica e energia contagiante em grupo.
+                  Hitbox, Funcional, FitDance e Muay Thai para alta queima calórica e energia contagiante em grupo.
                 </p>
               </article>
 

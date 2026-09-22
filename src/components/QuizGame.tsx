@@ -19,12 +19,12 @@ interface Step {
 const STEPS_DATA: Step[] = [
   {
     title: "1. Qual é o seu Principal Objetivo?",
-    subtitle: "Defina a meta principal para otimizarmos a biomecânica e o protocolo YouFit.",
+    subtitle: "Defina a meta principal para otimizarmos o protocolo Studio You Fit.",
     key: "goal",
     options: [
       { id: "hipertrofia", title: "Hipertrofia & Força", desc: "Ganho de massa muscular na musculação climatizada.", icon: "fa-fire" },
-      { id: "emagrecimento", title: "Definição & Queima", desc: "Redução de gordura com Ritbox e Funcional.", icon: "fa-bolt" },
-      { id: "luta", title: "Defesa Pessoal & Foco", desc: "Aulas de Jiu-Jitsu e Muay Thai em Barra Nova.", icon: "fa-shield-halved" },
+      { id: "emagrecimento", title: "Definição & Queima", desc: "Redução de gordura com Hitbox e Funcional.", icon: "fa-bolt" },
+      { id: "luta", title: "Muay Thai & Foco", desc: "Condicionamento e disciplina marcial em Barra Nova.", icon: "fa-shield-halved" },
       { id: "danca", title: "FitDance & Bem-Estar", desc: "Alta queima calórica com muita dança e energia.", icon: "fa-music" }
     ]
   },
@@ -36,12 +36,12 @@ const STEPS_DATA: Step[] = [
       { id: "iniciante", title: "Iniciante / Novato", desc: "Começando agora ou querendo sair do sedentarismo.", icon: "fa-seedling" },
       { id: "intermediario", title: "Intermediário", desc: "Treino regularmente há alguns meses.", icon: "fa-person-running" },
       { id: "avancado", title: "Avançado / Hardcore", desc: "Anos de treino intenso e constância.", icon: "fa-dumbbell" },
-      { id: "convenio", title: "Usuário Wellhub / TotalPass", desc: "Treino com convênio parceiro YouFit.", icon: "fa-id-card" }
+      { id: "convenio", title: "Usuário Wellhub (Silver+) / TotalPass (TP2)", desc: "Treino com convênio parceiro You Fit.", icon: "fa-id-card" }
     ]
   },
   {
     title: "3. Dias Disponíveis por Semana",
-    subtitle: "Quantas vezes na semana você consegue colar na YouFit?",
+    subtitle: "Quantas vezes na semana você consegue vir à You Fit?",
     key: "days",
     options: [
       { id: "3x", title: "3 Dias por Semana", desc: "Ideal para rotinas corridas.", icon: "fa-calendar-days" },
@@ -62,13 +62,13 @@ const STEPS_DATA: Step[] = [
   },
   {
     title: "5. Foco Muscular ou Aula Preferida",
-    subtitle: "Qual modalidade ou região você quer priorizar?",
+    subtitle: "Qual modalidade você quer priorizar?",
     key: "focus_muscle",
     options: [
       { id: "musculacao", title: "Área de Musculação", desc: "Pesos livres, máquinas e halteres modernos.", icon: "fa-dumbbell" },
-      { id: "ritbox_funcional", title: "Ritbox & Funcional", desc: "Treino dinâmico em grupo de alta intensidade.", icon: "fa-person-hiking" },
-      { id: "artes_marciais", title: "Muay Thai & Jiu-Jitsu", desc: "Disciplina, técnica e combate.", icon: "fa-hand-fist" },
-      { id: "fitdance", title: "FitDance", desc: "Coreografias e diversão total.", icon: "fa-compact-disc" }
+      { id: "hitbox_funcional", title: "Hitbox & Funcional", desc: "Treino dinâmico em grupo de alta intensidade.", icon: "fa-person-hiking" },
+      { id: "muay_thai", title: "Muay Thai & Combate", desc: "Técnica, tônus e alta queima calórica.", icon: "fa-hand-fist" },
+      { id: "fitdance", title: "FitDance (Prof. Daniel Sales)", desc: "Coreografias e diversão total.", icon: "fa-compact-disc" }
     ]
   },
   {
@@ -78,8 +78,8 @@ const STEPS_DATA: Step[] = [
     options: [
       { id: "maquinas", title: "Máquinas e Cabos", desc: "Segurança total e isolamento guiado.", icon: "fa-gears" },
       { id: "livres", title: "Pesos Livres", desc: "Halteres, anilhas e barras.", icon: "fa-dumbbell" },
-      { id: "misto", title: "Abordagem Mista (Recomendado)", desc: "O melhor dos dois mundos YouFit.", icon: "fa-shuffle" },
-      { id: "aulas", title: "Aulas Coletivas & Peso Corporal", desc: "Dinamismo e interação.", icon: "fa-users" }
+      { id: "misto", title: "Abordagem Mista (Recomendado)", desc: "O melhor dos dois mundos You Fit.", icon: "fa-shuffle" },
+      { id: "aulas", title: "Aulas Coletivas & Peso Corporal", desc: "Dinamismo e interação em grupo.", icon: "fa-users" }
     ]
   },
   {
@@ -89,8 +89,8 @@ const STEPS_DATA: Step[] = [
     options: [
       { id: "esteira", title: "Esteira (Corrida / Caminhada)", desc: "Ritmo constante ou tiros.", icon: "fa-person-running" },
       { id: "bike", title: "Bicicleta Ergométrica", desc: "Baixo impacto nas articulações.", icon: "fa-bicycle" },
-      { id: "aulas_cardio", title: "Cardio nas Aulas (Ritbox / Dança)", desc: "Queima em grupo super divertida.", icon: "fa-heart-pulse" },
-      { id: "sem_cardio", title: "Apenas Foco em Força", desc: "Foco exclusivo em musculação.", icon: "fa-ban" }
+      { id: "aulas_cardio", title: "Cardio nas Aulas (Hitbox / FitDance)", desc: "Queima em grupo super divertida.", icon: "fa-heart-pulse" },
+      { id: "sem_cardio", title: "Apenas Foco em Força", desc: "Foco exclusivo em musculação pesada.", icon: "fa-ban" }
     ]
   },
   {
@@ -105,23 +105,23 @@ const STEPS_DATA: Step[] = [
   },
   {
     title: "9. Horário de Treino Habitual",
-    subtitle: "Quando você costuma frequentar a YouFit Barra Nova?",
+    subtitle: "Quando você costuma frequentar a You Fit Barra Nova?",
     key: "time_slot",
     options: [
-      { id: "manha", title: "Manhã Cedo (05h30 - 10h)", desc: "Disposição para o dia todo.", icon: "fa-sun" },
+      { id: "manha", title: "Manhã Cedo (05h - 10h)", desc: "Disposição para o dia todo.", icon: "fa-sun" },
       { id: "tarde", title: "Tarde (14h - 17h)", desc: "Foco e tranquilidade.", icon: "fa-cloud-sun" },
-      { id: "noite", title: "Noite (17h - 22h)", desc: "Descarregar o estresse do dia.", icon: "fa-moon" }
+      { id: "noite", title: "Noite (17h - 21:30h)", desc: "Descarregar o estresse do dia.", icon: "fa-moon" }
     ]
   },
   {
-    title: "10. Convênio ou Aula Experimental",
-    subtitle: "Como você deseja iniciar na YouFit?",
+    title: "10. Opção de Acesso Pretendida",
+    subtitle: "Como você deseja treinar na You Fit com Matrícula Grátis?",
     key: "access_type",
     options: [
-      { id: "experimental", title: "Quero 1 Aula Experimental Grátis", desc: "Experimente sem compromisso.", icon: "fa-gift" },
-      { id: "wellhub", title: "Sou usuário Wellhub (Gympass)", desc: "Ativação direta na recepção.", icon: "fa-circle-check" },
-      { id: "totalpass", title: "Sou usuário TotalPass", desc: "Parceiro YouFit aceito aqui.", icon: "fa-check-double" },
-      { id: "plano_mensal", title: "Quero assinar Plano (A partir R$110)", desc: "Melhor custo-benefício de Barra Nova.", icon: "fa-star" }
+      { id: "plano_essencial", title: "Plano Anual Essencial (R$ 129,90)", desc: "Musculação completa e climatizada.", icon: "fa-star" },
+      { id: "plano_premium", title: "Plano Premium (R$ 149,90)", desc: "Musculação + Todas as Aulas Coletivas.", icon: "fa-crown" },
+      { id: "plano_familia", title: "Plano Família (R$ 100,00/pessoa)", desc: "Economia a partir de 3 pessoas.", icon: "fa-users" },
+      { id: "convenio", title: "Wellhub (Silver+) ou TotalPass (TP2)", desc: "Ativação direta na recepção.", icon: "fa-circle-check" }
     ]
   }
 ];
@@ -134,7 +134,6 @@ export const QuizGame: React.FC = () => {
   const [userXP, setUserXP] = useState(100);
   const [soundEnabled, setSoundEnabled] = useState(true);
   const [userName, setUserName] = useState('');
-  const [copiedCode, setCopiedCode] = useState(false);
 
   // Web Audio Synthesizer
   const audioCtxRef = useRef<AudioContext | null>(null);
@@ -161,32 +160,32 @@ export const QuizGame: React.FC = () => {
       const gain = ctx.createGain();
       osc.connect(gain);
       gain.connect(ctx.destination);
+
       const now = ctx.currentTime;
 
-      if (type === 'click') {
-        osc.type = 'sine';
-        osc.frequency.setValueAtTime(440, now);
-        osc.frequency.exponentialRampToValueAtTime(880, now + 0.08);
-        gain.gain.setValueAtTime(0.15, now);
-        gain.gain.exponentialRampToValueAtTime(0.01, now + 0.08);
-        osc.start(now);
-        osc.stop(now + 0.08);
-      } else if (type === 'select') {
+      if (type === 'start') {
         osc.type = 'triangle';
+        osc.frequency.setValueAtTime(440, now);
+        osc.frequency.exponentialRampToValueAtTime(880, now + 0.3);
+        gain.gain.setValueAtTime(0.2, now);
+        gain.gain.exponentialRampToValueAtTime(0.01, now + 0.3);
+        osc.start(now);
+        osc.stop(now + 0.3);
+      } else if (type === 'select') {
+        osc.type = 'sine';
         osc.frequency.setValueAtTime(587.33, now);
-        osc.frequency.setValueAtTime(880, now + 0.05);
+        osc.frequency.exponentialRampToValueAtTime(880, now + 0.15);
         gain.gain.setValueAtTime(0.2, now);
         gain.gain.exponentialRampToValueAtTime(0.01, now + 0.15);
         osc.start(now);
         osc.stop(now + 0.15);
-      } else if (type === 'start') {
-        osc.type = 'sawtooth';
-        osc.frequency.setValueAtTime(220, now);
-        osc.frequency.exponentialRampToValueAtTime(440, now + 0.2);
-        gain.gain.setValueAtTime(0.25, now);
-        gain.gain.exponentialRampToValueAtTime(0.01, now + 0.2);
+      } else if (type === 'click') {
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(329.63, now);
+        gain.gain.setValueAtTime(0.1, now);
+        gain.gain.exponentialRampToValueAtTime(0.01, now + 0.08);
         osc.start(now);
-        osc.stop(now + 0.2);
+        osc.stop(now + 0.08);
       } else if (type === 'success') {
         osc.type = 'sine';
         osc.frequency.setValueAtTime(523.25, now);
@@ -315,7 +314,7 @@ export const QuizGame: React.FC = () => {
       const opt = s.options.find(o => o.id === selectedId) || s.options[0];
       msg += `%0A• ${s.title.replace(/^\d+\.\s*/, '')}: *${opt.title}*`;
     });
-    msg += `%0A%0AGostaria de garantir minha vaga / aula experimental em Barra Nova!`;
+    msg += `%0A%0AGostaria de garantir minha matrícula com taxa zero em Barra Nova!`;
     window.open(`https://wa.me/${phone}?text=${msg}`, '_blank');
   };
 
@@ -323,7 +322,7 @@ export const QuizGame: React.FC = () => {
   const currentStepData = STEPS_DATA[currentStep];
 
   return (
-    <section id="desafio" className="py-20 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto scroll-mt-20 relative">
+    <section id="monte-seu-treino" className="py-20 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto scroll-mt-20 relative">
       <canvas ref={canvasRef} className="fixed inset-0 pointer-events-none z-0" />
 
       {/* TOP HEADER */}
@@ -370,7 +369,7 @@ export const QuizGame: React.FC = () => {
               MONTE SEU TREINO <span className="text-[#CCFF00] drop-shadow-[0_0_20px_rgba(204,255,0,0.4)]">10-X YOUFIT</span>
             </h2>
             <p className="text-zinc-300 max-w-xl mx-auto mb-8 text-sm sm:text-base leading-relaxed font-medium">
-              Responda a 10 etapas rápidas e imersivas para personalizar sua rotina fitness na academia YouFit em Barra Nova (Marechal Deodoro - AL). Ganhe XP e resgate seu bônus!
+              Responda a 10 etapas rápidas para personalizar sua rotina fitness na academia You Fit em Barra Nova (Marechal Deodoro - AL). Ganhe XP e resgate seu bônus!
             </p>
             <button
               onClick={startMinigame}
@@ -483,7 +482,7 @@ export const QuizGame: React.FC = () => {
                 SEU TREINO PERSONALIZADO YOUFIT
               </h3>
               <p className="text-zinc-400 text-xs sm:text-sm mt-2 font-medium">
-                Apresente seu resultado na recepção da YouFit em Barra Nova ou agende sua visita via WhatsApp!
+                Apresente seu resultado na recepção da You Fit em Barra Nova ou agende sua matrícula via WhatsApp!
               </p>
             </div>
 

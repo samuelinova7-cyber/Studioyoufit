@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { GYM_INFO, MODALIDADES, PLANOS } from '../data/gymData';
-import { X, Send, MessageCircle, CheckCircle2, Dumbbell } from 'lucide-react';
+import { GYM_INFO } from '../data/gymData';
+import { X, Send, MessageCircle, CheckCircle2, Dumbbell, Sparkles } from 'lucide-react';
 
 interface FirstLessonModalProps {
   isOpen: boolean;
@@ -15,7 +15,7 @@ export const FirstLessonModal: React.FC<FirstLessonModalProps> = ({
 }) => {
   const [nome, setNome] = useState('');
   const [modalidade, setModalidade] = useState(initialSubject || 'Musculação');
-  const [plano, setPlano] = useState('Plano Anual Recorrente (R$ 110/mês)');
+  const [plano, setPlano] = useState('Plano Anual Essencial (R$ 129,90/mês)');
 
   useEffect(() => {
     if (initialSubject) {
@@ -31,7 +31,7 @@ export const FirstLessonModal: React.FC<FirstLessonModalProps> = ({
     const text = `Olá, Studio You Fit! Meu nome é ${nome || 'Aluno(a)'}.
 Tenho interesse em: ${modalidade}.
 Plano pretendido: ${plano}.
-Gostaria de agendar minha visita/matrícula na academia!`;
+Gostaria de agendar minha visita/matrícula na academia com matrícula grátis!`;
 
     const url = `https://wa.me/${GYM_INFO.whatsappClean}?text=${encodeURIComponent(text)}`;
     window.open(url, '_blank');
@@ -39,13 +39,14 @@ Gostaria de agendar minha visita/matrícula na academia!`;
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm animate-in fade-in duration-200">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md animate-in fade-in duration-200">
       <div className="bg-zinc-900 border border-zinc-800 rounded-3xl p-6 sm:p-8 max-w-lg w-full relative shadow-2xl overflow-hidden">
         
         {/* CLOSE BUTTON */}
         <button
           onClick={onClose}
           className="absolute top-5 right-5 p-2 text-zinc-400 hover:text-white bg-zinc-800 rounded-full transition-colors"
+          aria-label="Fechar"
         >
           <X className="w-5 h-5" />
         </button>
@@ -61,10 +62,10 @@ Gostaria de agendar minha visita/matrícula na academia!`;
           </div>
           <div>
             <h3 className="text-xl font-black uppercase text-white font-heading">
-              Agendar / Matrícula
+              Matrícula / Agendamento
             </h3>
-            <p className="text-xs text-zinc-400 font-bold uppercase tracking-wider">
-              Studio You Fit • Barra Nova - AL
+            <p className="text-xs text-[#CCFF00] font-bold uppercase tracking-wider">
+              Taxa de Matrícula R$ 0,00 • Barra Nova - AL
             </p>
           </div>
         </div>
@@ -86,7 +87,7 @@ Gostaria de agendar minha visita/matrícula na academia!`;
 
           <div>
             <label className="block text-xs font-bold uppercase text-zinc-300 mb-1">
-              Modalidade ou Dúvida
+              Modalidade ou Interesse
             </label>
             <select
               value={modalidade}
@@ -94,11 +95,12 @@ Gostaria de agendar minha visita/matrícula na academia!`;
               className="w-full bg-zinc-950 border border-zinc-800 rounded-2xl p-3.5 text-sm text-white focus:outline-none focus:border-[#CCFF00] transition-colors"
             >
               <option value="Musculação Climatizada">Musculação Climatizada</option>
-              <option value="Jiu-Jitsu (Prof. Wesley Rosa)">Jiu-Jitsu (Prof. Wesley Rosa - 1ª Aula Grátis)</option>
+              <option value="Hitbox (Prof. Julian)">Hitbox (Prof. Julian)</option>
+              <option value="FitDance (Prof. Daniel Sales)">FitDance (Prof. Daniel Sales)</option>
               <option value="Muay Thai (Prof. Alan França)">Muay Thai (Prof. Alan França)</option>
-              <option value="FitDance (Prof. Dan Sollys)">FitDance (Prof. Dan Sollys)</option>
-              <option value="Ritbox (Prof. Julian)">Ritbox (Prof. Julian)</option>
-              <option value="Treino Funcional">Treino Funcional (Profs. Rogério, Moisés e Thallya)</option>
+              <option value="Treino Funcional (Profs. Rogério, Moisés e Thallya)">Treino Funcional (Profs. Rogério, Moisés e Thallya)</option>
+              <option value="Diária Avulsa (R$ 40,00)">Diária Avulsa (Day Use - R$ 40,00)</option>
+              <option value="Avaliação Física (R$ 120,00)">Avaliação Física Completa (R$ 120,00)</option>
               <option value="Informações Gerais">Informações Gerais / Outros</option>
             </select>
           </div>
@@ -112,18 +114,19 @@ Gostaria de agendar minha visita/matrícula na academia!`;
               onChange={(e) => setPlano(e.target.value)}
               className="w-full bg-zinc-950 border border-zinc-800 rounded-2xl p-3.5 text-sm text-white focus:outline-none focus:border-[#CCFF00] transition-colors"
             >
-              <option value="Plano Anual Recorrente (R$ 110/mês)">Plano Anual Recorrente (R$ 110/mês)</option>
-              <option value="Plano Premium Completo">Plano Premium Completo</option>
-              <option value="Plano Casal / Dupla">Plano Casal / Dupla (Com Desconto)</option>
-              <option value="Wellhub (antigo Gympass)">Wellhub (antigo Gympass)</option>
-              <option value="TotalPass">TotalPass</option>
-              <option value="Aula Experimental Grátis">Quero apenas 1ª Aula Experimental Grátis</option>
+              <option value="Plano Anual Essencial (R$ 129,90/mês)">Plano Anual Essencial (R$ 129,90/mês)</option>
+              <option value="Plano Anual Premium (R$ 149,90/mês - Aulas Ilimitadas)">Plano Anual Premium (R$ 149,90/mês - Aulas Ilimitadas)</option>
+              <option value="Plano Família Essencial (R$ 100,00/pessoa - mín. 3)">Plano Família Essencial (R$ 100,00/pessoa - mín. 3)</option>
+              <option value="Plano Casal / Dupla de Amigos">Plano Casal / Dupla de Amigos (Com Desconto)</option>
+              <option value="Wellhub (a partir do Silver+)">Wellhub (a partir do Silver+)</option>
+              <option value="TotalPass (a partir do TP2)">TotalPass (a partir do TP2)</option>
+              <option value="Diária Avulsa (R$ 40,00)">Diária Avulsa (R$ 40,00)</option>
             </select>
           </div>
 
           <div className="bg-zinc-950 p-3.5 rounded-2xl border border-zinc-800 text-xs text-zinc-400 flex items-center gap-2">
             <CheckCircle2 className="w-4 h-4 text-[#CCFF00] shrink-0" />
-            <span>Ao clicar abaixo, você será redirecionado para o WhatsApp oficial com a mensagem pré-formatada.</span>
+            <span>Redirecionamento direto para o WhatsApp oficial com a mensagem pré-formatada.</span>
           </div>
 
           <button
@@ -131,7 +134,7 @@ Gostaria de agendar minha visita/matrícula na academia!`;
             className="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-black py-4 rounded-2xl text-xs uppercase tracking-wider transition-all duration-200 flex items-center justify-center gap-2 shadow-lg"
           >
             <MessageCircle className="w-5 h-5" />
-            <span>Enviar no WhatsApp da Academia</span>
+            <span>Enviar no WhatsApp da You Fit</span>
           </button>
         </form>
 
