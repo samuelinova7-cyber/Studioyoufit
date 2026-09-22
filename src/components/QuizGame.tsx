@@ -307,14 +307,29 @@ export const QuizGame: React.FC = () => {
   const handleWhatsappSend = (e: React.FormEvent) => {
     e.preventDefault();
     const phone = GYM_INFO.whatsappClean;
-    const nameStr = userName.trim() ? `*Nome:* ${userName}%0A` : '';
-    let msg = `Olá! Montei meu Treino YouFit 10-X no site:%0A${nameStr}`;
+    const nameStr = userName.trim() ? `*Aluno(a):* ${userName}%0A` : '';
+    
+    let msg = `🏋️‍♂️ *PROTOCOLO 10-X YOUFIT - BARRA NOVA* 🏋️‍♀️%0A`;
+    msg += `----------------------------------------%0A`;
+    msg += `${nameStr}`;
+    msg += `*Data:* ${new Date().toLocaleDateString('pt-BR')} às ${new Date().toLocaleTimeString('pt-BR', {hour: '2-digit', minute:'2-digit'})}%0A`;
+    msg += `----------------------------------------%0A%0A`;
+    msg += `📋 *RESUMO COMPLETO DAS SUAS ESCOLHAS:*%0A`;
+
     STEPS_DATA.forEach((s, idx) => {
       const selectedId = userData[s.key] || s.options[0].id;
       const opt = s.options.find(o => o.id === selectedId) || s.options[0];
-      msg += `%0A• ${s.title.replace(/^\d+\.\s*/, '')}: *${opt.title}*`;
+      const stepName = s.title.replace(/^\d+\.\s*/, '');
+      msg += `%0A🔹 *0${idx + 1}. ${stepName}*%0A   ↳ *Escolha:* ${opt.title}%0A   ↳ _Detalhe:_ ${opt.desc}`;
     });
-    msg += `%0A%0AGostaria de garantir minha matrícula com taxa zero em Barra Nova!`;
+
+    msg += `%0A%0A----------------------------------------%0A`;
+    msg += `🔥 *BENEFÍCIOS ESPECIAIS GARANTIDOS:*%0A`;
+    msg += `• Taxa de Matrícula: *R$ 0,00 (ISENÇÃO TOTAL)*%0A`;
+    msg += `• Estrutura 100% Climatizada em Barra Nova%0A`;
+    msg += `• Convênios: Wellhub (Silver+) / TotalPass (TP2)%0A%0A`;
+    msg += `💬 Olá! Conclui o Quiz 10-X no site da Studio You Fit com as especificações acima. Gostaria de confirmar minha matrícula e iniciar os treinos!`;
+
     window.open(`https://wa.me/${phone}?text=${msg}`, '_blank');
   };
 
